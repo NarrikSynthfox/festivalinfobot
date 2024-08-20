@@ -372,6 +372,8 @@ def generate_track_embed(track_data, is_new=False):
     embed.add_field(name="Duration", value=f"{track['dn'] // 60}m {track['dn'] % 60}s", inline=True)
     embed.add_field(name="Shortname", value=track['sn'], inline=True)
     embed.add_field(name="Song ID", value=f"{placeholder_id}", inline=True)
+    embed.add_field(name="Key", value=f'{track["mk"]} {track["mm"]}', inline=True)
+    embed.add_field(name="BPM", value=track["mt"], inline=True)
     
     # Add Last Modified field if it exists and format it to be more human-readable
     if 'lastModified' in track_data:
